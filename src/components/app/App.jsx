@@ -1,9 +1,9 @@
 import Profile from '../profile/Profile';
-import Section from '../section/Section'; // FriendList, Statistics, TransactionHistory,
+import Section from '../section/Section';
 import Statistics from '../statistics/Statistics';
 import FriendList from '../friend-list/FriendList';
 import TransactionHistory from '../transaction-history/TransactionHistory';
-import { user, data, friends, transactions } from '../../data/index'; // , friends, transactions
+import { user, data, friends, transactions } from '../../data/index';
 
 const App = () => {
   return (

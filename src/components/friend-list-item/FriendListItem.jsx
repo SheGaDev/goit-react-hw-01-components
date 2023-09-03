@@ -1,25 +1,5 @@
 import PropTypes from 'prop-types';
 
-// const Online = styled.span`
-//     display: block;
-//     width: 40px;
-//     height: 40px;
-//     border-radius: 50%;
-//     background-color: red;
-
-//     ${(props) =>
-//         props.$online &&
-//         css`
-//             background-color: green;
-//         `}
-// `;
-// const Li = styled.li`
-//     background-color: blue;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// `;
-
 const FriendListItem = ({ friend: { name, avatar, isOnline } }) => {
   return (
     <li>
