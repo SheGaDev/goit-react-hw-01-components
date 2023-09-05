@@ -3,7 +3,7 @@ import FriendListItem from '../friend-list-item/FriendListItem';
 
 const FriendList = ({ friends }) => {
   return (
-    <ul>
+    <ul className='flex flex-col gap-3'>
       {friends.map((friend) => (
         <FriendListItem key={friend.id} friend={friend} />
       ))}

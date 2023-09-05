@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 const Section = ({ title, children }) => {
   return (
-    <section className='mx-auto flex max-w-max flex-col items-center gap-2'>
+    <section className='mx-auto flex max-w-max flex-col items-center gap-3'>
       {title && (
-        <h2 className='pt-3'>
+        <h2 className='pt-4'>
           <b>{title}</b>
         </h2>
       )}

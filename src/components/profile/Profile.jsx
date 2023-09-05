@@ -3,25 +3,33 @@ import PropTypes from 'prop-types';
 const Profile = ({ username, tag, location, avatar, stats: { followers, views, likes } }) => {
   return (
     <>
-      <div className='grid flex-col justify-items-center'>
-        <img src={avatar} alt='User avatar' width='150' height='150' />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
+      <div className='flex flex-col items-center'>
+        <img
+          className='mb-2 rounded-full'
+          src={avatar}
+          alt='User avatar'
+          width='150'
+          height='150'
+        />
+        <h2>
+          <b>{username}</b>
+        </h2>
+        <h3 className='text-sm'>@{tag}</h3>
+        <h3 className='text-sm'>{location}</h3>
       </div>
-      <ul>
-        <li>
-          <span>Followers</span>
-          <span>{followers}</span>
-        </li>
-        <li>
-          <span>Views</span>
-          <span>{views}</span>
-        </li>
-        <li>
-          <span>Likes</span>
-          <span>{likes}</span>
-        </li>
+      <ul className='flex items-center gap-3'>
+        {[
+          ['Followers', followers],
+          ['Views', views],
+          ['Likes', likes],
+        ].map(([title, count]) => (
+          <li key={title} className='flex flex-col items-center'>
+            <span>{title}</span>
+            <span>
+              <b className='text-xs'>{count}</b>
+            </span>
+          </li>
+        ))}
       </ul>
     </>
   );
