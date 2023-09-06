@@ -6,7 +6,7 @@ module.exports = {
     es6: true,
   },
   parser: '@babel/eslint-parser',
-  plugins: ['react', 'react-hooks', 'tailwindcss', 'prettier'],
+  plugins: ['react', 'prettier'],
   extends: [
     'eslint:recommended',
     'airbnb',
@@ -25,8 +25,9 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
+      modules: true,
     },
-    ecmaVersion: 11,
+    ecmaVersion: 2022,
     requireConfigFile: false,
     sourceType: 'module',
     babelOptions: {
@@ -39,6 +40,9 @@ module.exports = {
     },
   },
   rules: {
+    'react/jsx-uses-react': 2,
+    'react/jsx-uses-vars': 2,
+    'react/jsx-runtime': 0,
     'react/require-default-props': [
       'error',
       {
@@ -53,7 +57,7 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'react/react-in-jsx-scope': 'off',
+    'react/react-in-jsx-scope': 0,
     'react/jsx-filename-extension': [
       1,
       {
@@ -70,7 +74,7 @@ module.exports = {
       },
     ],
     'prettier/prettier': [
-      'error',
+      2,
       {
         endOfLine: 'auto',
       },
