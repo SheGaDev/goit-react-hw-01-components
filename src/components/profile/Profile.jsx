@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Profile = ({ username, tag, location, avatar, stats: { followers, views, likes } }) => {
+const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
     <>
       <div className='flex flex-col items-center'>
@@ -18,11 +18,7 @@ const Profile = ({ username, tag, location, avatar, stats: { followers, views, l
         <h3 className='text-sm'>{location}</h3>
       </div>
       <ul className='flex items-center gap-3'>
-        {[
-          ['Followers', followers],
-          ['Views', views],
-          ['Likes', likes],
-        ].map(([title, count]) => (
+        {Object.entries(stats).map(([title, count]) => (
           <li key={title} className='flex flex-col items-center'>
             <span>{title}</span>
             <span>
